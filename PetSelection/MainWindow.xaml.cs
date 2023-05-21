@@ -10,19 +10,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PetSelection
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public User User { get; set; }
+
+        public UserControl CurrentView { get; set; }
+
+        public MainWindow(User user)
         {
+            this.User = user;
             InitializeComponent();
+
+            if (User.AccessLevel == "admin")
+            {
+                CurrentView = new AdminView(); // Предполагается, что у вас есть UserControl под названием AdminView
+            }
+            if (User.AccessLevel == "user")
+            {
+                CurrentView = new UserView();
+            }
+
+            this.DataContext = this; // Установка DataContext для MainWindow в этот экземпляр класса MainWindow
         }
     }
 }

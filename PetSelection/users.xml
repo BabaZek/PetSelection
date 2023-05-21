@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <userList>
+    <User>
+      <Surname>Булва</Surname>
+      <Name>Владислав</Name>
+      <MiddleName>Алексеевич</MiddleName>
+      <YearOfBirth>28.10.2004</YearOfBirth>
+      <Email>vladbulva@yandex.com</Email>
+      <PhoneNumber>+375256851912</PhoneNumber>
+      <Password>666666</Password>
+      <AccessLevel>user</AccessLevel>
+    </User>
+    <User>
+      <Surname>1</Surname>
+      <Name>1</Name>
+      <MiddleName>1</MiddleName>
+      <YearOfBirth>1</YearOfBirth>
+      <Email>1</Email>
+      <PhoneNumber>1</PhoneNumber>
+      <Password>1</Password>
+      <AccessLevel>admin</AccessLevel>
+    </User>
+    <User>
+      <Surname>2</Surname>
+      <Name>2</Name>
+      <MiddleName>2</MiddleName>
+      <YearOfBirth>2</YearOfBirth>
+      <Email>2</Email>
+      <PhoneNumber>2</PhoneNumber>
+      <Password>2</Password>
+      <AccessLevel>user</AccessLevel>
+    </User>
+  </userList>
+</UserList>

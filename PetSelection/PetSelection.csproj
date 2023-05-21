@@ -7,4 +7,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Source\EydBOhAUcAIBL5j.jpg" />
+    <None Remove="Source\Крестик Активный.png" />
+    <None Remove="Source\Крестик Не активный.png" />
+    <None Remove="Source\Прочерк Активный.png" />
+    <None Remove="Source\Прочерк Не активный.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\EydBOhAUcAIBL5j.jpg" />
+    <Resource Include="Source\Крестик Активный.png" />
+    <Resource Include="Source\Крестик Не активный.png" />
+    <Resource Include="Source\Прочерк Активный.png" />
+    <Resource Include="Source\Прочерк Не активный.png" />
+  </ItemGroup>
+	
 </Project>
