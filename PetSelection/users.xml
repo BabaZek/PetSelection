@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <userList>
+    <User>
+      <Id>1</Id>
+      <Surname>1</Surname>
+      <Name>1</Name>
+      <MiddleName>1</MiddleName>
+      <YearOfBirth>1</YearOfBirth>
+      <Email>1</Email>
+      <PhoneNumber>1</PhoneNumber>
+      <Password>1</Password>
+    </User>
+    <User xsi:type="Admin">
+      <Id>2</Id>
+      <Surname>2</Surname>
+      <Name>2</Name>
+      <MiddleName>2</MiddleName>
+      <YearOfBirth>2</YearOfBirth>
+      <Email>2</Email>
+      <PhoneNumber>2</PhoneNumber>
+      <Password>2</Password>
+    </User>
+  </userList>
+</UserList>

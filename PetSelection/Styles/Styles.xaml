@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ 
+    <!--Стиль прозрачных кнопок-->
+    <Style x:Key="NoBacklightButton" TargetType="Button">
+        <Setter Property="Foreground" Value="#FF1E82C8"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock x:Name="ButtonText" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="ButtonText" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Стиль главных кнопок-->
+    <Style x:Key="MainButton" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#FF0EA7E8"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <!--Стиль текстбоксов-->
+    <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#FF606167"/>
+        <Setter Property="Background" Value="#FF10121B"/>
+        <Setter Property="Foreground" Value="#FF606167"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="2">
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="0,0,0,0" />
+                            <TextBlock IsHitTestVisible="False" Foreground="{TemplateBinding Foreground}" Margin="0,5,0,0" 
+                                   Text="{TemplateBinding Tag}"
+                                   x:Name="watermark">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text.Length}" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsKeyboardFocused}" Value="False" />
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text.Length}" Value="0" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Стиль паролей-->
+    <Style x:Key="PasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#FF606167"/>
+        <Setter Property="Background" Value="#FF10121B"/>
+        <Setter Property="Foreground" Value="#FF606167"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+
+</ResourceDictionary>

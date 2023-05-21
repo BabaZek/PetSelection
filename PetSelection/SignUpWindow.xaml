@@ -1,0 +1,64 @@
+﻿<Window x:Class="PetSelection.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetSelection"
+        mc:Ignorable="d"
+        Title="SignUpWindow" Height="420" Width="360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF232D3E"/>
+            <GradientStop Color="#FF1D222C" Offset="1"/>
+            <GradientStop Color="#FF1D222C" Offset="0.5"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="260"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Background="Transparent" Grid.Row="0">
+            <Polygon Fill="White" Opacity="0.2" Points="100, 0, 115, 8, 245, 8, 260, 0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Name="MinButton" Height="20" Width="20" Margin="0,0,5,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Прочерк Не активный.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value = "True">
+                                    <Setter Property="Source" Value="/Source/Прочерк Активный.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Name="CloseButton" Height="20" Width="20" Margin="0,0,5,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Крестик Не активный.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseButton}" Value = "True">
+                                    <Setter Property="Source" Value="/Source/Крестик Активный.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Label Content="Регистрация" FontSize="16" Foreground="BlueViolet" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="SurnameTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,10,30,0" Tag="Фамилия" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,45,30,0" Tag="Имя" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="MiddleNameTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,80,30,0" Tag="Отчество" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="YearOfBirthTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,115,30,0" Tag="Год рождения" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="EmailTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,150,30,0" Tag="Электронная почта" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="PhoneNumberTextBox" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Margin="30,185,30,0" Tag="Номер телефона" Height="30" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PasswordBox" Style="{StaticResource PasswordBoxStyle}" Grid.Row="2" Margin="30,220,30,0" Height="30" VerticalAlignment="Top" />
+        <Button x:Name="SignUpButton" Style="{StaticResource MainButton}" Grid.Row="3" Margin="30,10,30,60" Content="Зарегистрироваться" Click="SignUpButton_Click"/>
+        <Button x:Name="LogInButton" Style="{StaticResource NoBacklightButton}" Grid.Row="3" Margin="30,50,30,30" Content="Уже есть учетная запись?" Click="LogInButton_Click"/>
+        <CheckBox x:Name="AsAnAdmin" Content="Администратор" HorizontalAlignment="Left" Margin="249,85,0,0" Grid.Row="3" VerticalAlignment="Top" Foreground="#FF606167"/>
+    </Grid>
+</Window>
